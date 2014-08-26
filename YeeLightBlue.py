@@ -1,21 +1,23 @@
 import pexpect
-from subprocess import Popen
+from subprocess import Popen, call
 import time
 
 class YeeLightBlue:
     
-    def __init__(self, mac_str):
-        self.connect(mac_str)
+    def __init__(self, mac_str, device_no):
+        self.connect(mac_str, device_no)
         pass
     
     def discover(self):
         # TODO: Some codes to use lescan to find the YeeLightBlue
         pass
 
-    def connect(self,mac_str):
-        output = Popen(['sudo', 'hcitool', 'lecc', s_str])
+    def connect(self, mac_str, device_no):
+	call(['sudo', 'hciconfig', device_no, 'down'])
+	call(['sudo', 'hciconfig', device_no, 'up'])
+        call(['sudo', 'hcitool', '-i', device_no, 'lecc', mac_str])
         time.sleep(1)
-        self.con = pexpect.spawn('sudo gatttool -b ' + s_str + ' -I')
+        self.con = pexpect.spawn('sudo gatttool -i ' + device_no + ' -b ' + mac_str + ' -I')
         self.con.expect('\[LE\]>', timeout=600)
         self.con.sendline('connect')
         self.con.expect('\[LE\]>', timeout=600)
@@ -28,10 +30,10 @@ class YeeLightBlue:
         #pass
     
     def turnOff(self):
-        self.con.sendline('char-write-cmd 0x0025 ,,,0,,,,,,,,,,,,,,')      
+        self.con.sendline('char-write-cmd 0x0025 2c2c2c302c2c2c2c2c2c2c2c2c2c2c2c2c2c')      
 
     def turnOn(self):
-        self.con.sendline('char-write-cmd 0x0025 ,,,100,,,,,,,,,,,,')
+        self.con.sendline('char-write-cmd 0x0025 2c2c2c3130302c2c2c2c2c2c2c2c2c2c2c2c')
         #pass
         
     def str2hex(self, a_str):
@@ -73,7 +75,7 @@ class YeeLightBlue:
 
 
 '''Enter your Mac Address inside the YeeLightBlue'''
-x = YeeLightBlue("CD:B7:2E:58:0D:32")
+x = YeeLightBlue("00:17:EA:91:03:86", "hci1")
 '''Use control to change the RGB and brightness'''
 x.control('255','0','0','100')
 time.sleep(2)
@@ -81,6 +83,9 @@ x.control('0','255','0','100')
 time.sleep(2)
 x.control('0','0','255','100')
 time.sleep(2)
+x.turnOff()
+time.sleep(2)
+x.turnOn()
 '''Creates a delayed switch on time; delayON(time, 0 or 1);'''
 '''Function not ready'''
 #x.delayON(5,1)
