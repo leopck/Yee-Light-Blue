@@ -1,8 +1,15 @@
 import yeelightblue
 import time
+import sys
+
+if len(sys.argv) != 2:
+	print "Usage:\n sudo python test.py hciX"
+	sys.exit()
+
+device_no = sys.argv[1]
 
 '''Enter your Mac Address & USB device inside the YeeLightBlue'''
-x = yeelightblue.YeeLightBlue("00:17:EA:91:03:86", "hci1")
+x = yeelightblue.YeeLightBlue("00:17:EA:91:03:86", device_no)
 '''Use control to change the RGB and brightness'''
 x.control('255','0','0','100')
 time.sleep(2)
