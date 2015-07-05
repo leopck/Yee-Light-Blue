@@ -57,14 +57,42 @@ sudo python ./setup.py install
 
 ===============
 
-#### If you're interested in contributing into this library
+
+### If you're interested in contributing into this library
 
 - This code is all written in Python, and it is possible to be written in other programming languages to support Yee Light Blue into other languages as well. **Credits to Yap Wen Jiun for reverse engineering the Yee Light Blue**
 
-- The class of the Yee Light Blue is placed inside the yeelightblue.py in which contains 10 methods or functions to control the Yee Light Blue.
+- The class of the Yee Light Blue is placed inside the yeelightblue.py in which contains 10 methods or functions to control the Yee Light Blue. Most of the methods written are very self-explainatory but if you need some clarifications just ask away.
 
-`__init__: contructor function, receives `
+#####Some API references guide
 
+I'll just show the important ones with examples so that you can try this on your own and play with your RPi and Yee Light Blue.
+
+Using test.py, you can try varies ways to control your Yee Light Blue.
+
+**connect:** connects your RPi with the Yee Light Blue
+Example:
+`x = yeelightblue.YeeLightBlue("00:xx:xx:xx:xx:xx", "hci0")`
+
+**disconnect:** disconnects your RPi with the Yee Light Blue
+Example:
+`x.disconnect()`
+
+**turnOn:** Switches Yee Light Blue on
+Example:
+`x.turnOn()`
+
+**turnOff:** Switches Yee Light Blue off
+Example:
+`x.turnOff()`
+
+**control:** Controls the Yee Light Blue RGB and Brightness.
+Format:
+`x.control(red, green, blue, rightness)`
+Example:
+`x.control('255','0','0','100') #This will output a very bright red color`
+
+========
 #### TODO
 - Finish up the discover function/method
 -- Inside this method, using *sudo hcitool lescan* we can scan and get the MAC address of the Yee Light Blue and filtering that we would be able to discover the Yee Light Blue
