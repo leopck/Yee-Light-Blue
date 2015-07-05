@@ -45,7 +45,8 @@ OR:
 
 If these doesn't work for you, it is most likely that you're missing pip and easy_install. You can either install them or you can manually install pexpect.
 
-1. Go to https://pypi.python.org/pypi/pexpect/ and download the latest version.
+######Manual Installation of pexpect
+Go to https://pypi.python.org/pypi/pexpect/ and download the latest version.
 
 For Linux System Only (Since I'm talking about Raspberry Pi here)
 ```
