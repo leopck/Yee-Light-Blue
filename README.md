@@ -74,25 +74,36 @@ Using test.py, you can try varies ways to control your Yee Light Blue.
 
 **connect:** connects your RPi with the Yee Light Blue
 Example:
-```x = yeelightblue.YeeLightBlue("00:xx:xx:xx:xx:xx", "hci0")```
-
+```
+x = yeelightblue.YeeLightBlue("00:xx:xx:xx:xx:xx", "hci0")
+```
 **disconnect:** disconnects your RPi with the Yee Light Blue
 Example:
-```x.disconnect()```
+```
+x.disconnect()
+```
 
 **turnOn:** Switches Yee Light Blue on
 Example:
-```x.turnOn()```
+```
+x.turnOn()
+```
 
 **turnOff:** Switches Yee Light Blue off
 Example:
-```x.turnOff()```
+```
+x.turnOff()
+```
 
 **control:** Controls the Yee Light Blue RGB and Brightness.
 Format:
-```x.control(red, green, blue, rightness)```
+```
+x.control(red, green, blue, rightness)
+```
 Example:
-```x.control('255','0','0','100') #This will output a very bright red color```
+```
+x.control('255','0','0','100') #This will output a very bright red color
+```
 
 ========
 #### TODO
