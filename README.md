@@ -15,24 +15,25 @@ Running test.py requires root
 
 *Credits to Ramin Sangesari in hackster.io for this*
 
-**Get the required libraries**
-
+**1. Get the required libraries**
+```
 sudo apt-get install libusb-dev libdbus-1-dev libglib2.0-dev libudev-dev libical-dev libreadline-dev
-
-**Download Bluez**
-
+```
+**2. Download Bluez**
+```
 sudo mkdir bluez
 cd bluez
 sudo wget www.kernel.org/pub/linux/bluetooth/bluez-5.31.tar.xz
-
-**Unzip and Compile Bluez**
+```
+**3. Unzip and Compile Bluez**
+```
 sudo unxz bluez-5.31.tar.xz
 sudo tar xvf bluez-5.31.tar
 cd bluez-5.31
 sudo ./configure --disable-systemd
 sudo make
 sudo make install
-
+```
 ===============
 
 #### If you're interested in contributing into this library
