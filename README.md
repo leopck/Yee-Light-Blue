@@ -64,7 +64,9 @@ sudo python ./setup.py install
 
 - The class of the Yee Light Blue is placed inside the yeelightblue.py in which contains 10 methods or functions to control the Yee Light Blue. Most of the methods written are very self-explainatory but if you need some clarifications just ask away.
 
-#####Some API references guide
+===
+
+####Some API references guide
 
 I'll just show the important ones with examples so that you can try this on your own and play with your RPi and Yee Light Blue.
 
@@ -72,25 +74,25 @@ Using test.py, you can try varies ways to control your Yee Light Blue.
 
 **connect:** connects your RPi with the Yee Light Blue
 Example:
-`x = yeelightblue.YeeLightBlue("00:xx:xx:xx:xx:xx", "hci0")`
+```x = yeelightblue.YeeLightBlue("00:xx:xx:xx:xx:xx", "hci0")```
 
 **disconnect:** disconnects your RPi with the Yee Light Blue
 Example:
-`x.disconnect()`
+```x.disconnect()```
 
 **turnOn:** Switches Yee Light Blue on
 Example:
-`x.turnOn()`
+```x.turnOn()```
 
 **turnOff:** Switches Yee Light Blue off
 Example:
-`x.turnOff()`
+```x.turnOff()```
 
 **control:** Controls the Yee Light Blue RGB and Brightness.
 Format:
-`x.control(red, green, blue, rightness)`
+```x.control(red, green, blue, rightness)```
 Example:
-`x.control('255','0','0','100') #This will output a very bright red color`
+```x.control('255','0','0','100') #This will output a very bright red color```
 
 ========
 #### TODO
