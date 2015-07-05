@@ -7,6 +7,8 @@ Writing library for yee light blue using python for raspberry pi
 
 Running test.py requires root
 
+===============
+
 ### Some guidelines into using this library
 
 #### Install all the pre-requisite libraries and third-party tools
@@ -30,6 +32,8 @@ cd bluez-5.31
 sudo ./configure --disable-systemd
 sudo make
 sudo make install
+
+===============
 
 #### If you're interested in contributing into this library
 
