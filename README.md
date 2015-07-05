@@ -72,30 +72,30 @@ I'll just show the important ones with examples so that you can try this on your
 
 Using test.py, you can try varies ways to control your Yee Light Blue.
 
-**connect:** connects your RPi with the Yee Light Blue
+**connect:** connects your RPi with the Yee Light Blue<br />
 Example:
 ```
 x = yeelightblue.YeeLightBlue("00:xx:xx:xx:xx:xx", "hci0")
 ```
-**disconnect:** disconnects your RPi with the Yee Light Blue
+**disconnect:** disconnects your RPi with the Yee Light Blue<br />
 Example:
 ```
 x.disconnect()
 ```
 
-**turnOn:** Switches Yee Light Blue on
+**turnOn:** Switches Yee Light Blue on<br />
 Example:
 ```
 x.turnOn()
 ```
 
-**turnOff:** Switches Yee Light Blue off
+**turnOff:** Switches Yee Light Blue off<br />
 Example:
 ```
 x.turnOff()
 ```
 
-**control:** Controls the Yee Light Blue RGB and Brightness.
+**control:** Controls the Yee Light Blue RGB and Brightness.<br />
 Format:
 ```
 x.control(red, green, blue, rightness)
@@ -108,6 +108,6 @@ x.control('255','0','0','100') #This will output a very bright red color
 ========
 #### TODO
 - Finish up the discover function/method
--- Inside this method, using *sudo hcitool lescan* we can scan and get the MAC address of the Yee Light Blue and filtering that we would be able to discover the Yee Light Blue
+-- Inside this method, using `sudo hcitool lescan we can scan and get the MAC address of the Yee Light Blue and filtering that we would be able to discover the Yee Light Blue
 
 - There's a few more UUID/Handles that the Yee Light Blue has for example flickering and auto delay timer, however, with the current functionality you are most likely able to perform basic and cool things. You're more than welcome to complete it.
