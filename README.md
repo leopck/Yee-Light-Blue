@@ -98,7 +98,7 @@ x.turnOff()
 **control:** Controls the Yee Light Blue RGB and Brightness.<br />
 Format:
 ```
-x.control(red, green, blue, rightness)
+x.control(red, green, blue, brightness)
 ```
 Example:
 ```
