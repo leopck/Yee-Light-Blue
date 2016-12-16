@@ -30,10 +30,10 @@ class YeeLightBlue:
         #pass
     
     def turnOff(self):
-        self.con.sendline('char-write-cmd 0x0025 2c2c2c302c2c2c2c2c2c2c2c2c2c2c2c2c2c')      
+        self.con.sendline('char-write-cmd 0x0012 2c2c2c302c2c2c2c2c2c2c2c2c2c2c2c2c2c')      
 
     def turnOn(self):
-        self.con.sendline('char-write-cmd 0x0025 2c2c2c3130302c2c2c2c2c2c2c2c2c2c2c2c')
+        self.con.sendline('char-write-cmd 0x0012 2c2c2c3130302c2c2c2c2c2c2c2c2c2c2c2c')
         #pass
         
     def str2hex(self, a_str):
@@ -50,7 +50,7 @@ class YeeLightBlue:
             #print a_str
         self.str2hex(a_str)
         print self.hexStr
-        self.con.sendline('char-write-cmd 0x0025 ' + self.hexStr)
+        self.con.sendline('char-write-cmd 0x0012 ' + self.hexStr)
     
     def delayON(self, time, status):
         '''TODO: Function is missing UUID/Handle'''
@@ -66,7 +66,7 @@ class YeeLightBlue:
                 #print a_str
             self.str2hex(a_str)
             print self.hexStr
-            self.con.sendline('char-write-cmd 0x0025 ' + self.hexStr)
+            self.con.sendline('char-write-cmd 0x0012 ' + self.hexStr)
 
     def delayOnStatusQuery(self):
         '''TODO: Function is missing UUID/Handle'''
