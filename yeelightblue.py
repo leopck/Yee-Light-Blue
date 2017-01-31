@@ -15,7 +15,6 @@ class YeeLightBlue:
     def connect(self, mac_str, device_no):
 	call(['sudo', 'hciconfig', device_no, 'down'])
 	call(['sudo', 'hciconfig', device_no, 'up'])
-        call(['sudo', 'hcitool', '-i', device_no, 'lecc', mac_str])
         time.sleep(1)
         self.con = pexpect.spawn('sudo gatttool -i ' + device_no + ' -b ' + mac_str + ' -I')
         self.con.expect('\[LE\]>', timeout=600)
