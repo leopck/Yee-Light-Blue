@@ -1,7 +1,9 @@
-Yee-Light-Blue
+Yee-Light-Blue-2
 ==============
 
-Writing library for yee light blue using python for raspberry pi
+This code is written to run yee light blue 2 as yee light blue is no longer on sales anymore. Yee Light Blue 2 codes is still in development and is still in beta phase. Please test and file issues to contribute into this code.
+
+Writing library for yee light blue 2 using python for raspberry pi
 
 - Enabling Raspberry Pi to control Yee Light Blue freely.
 
