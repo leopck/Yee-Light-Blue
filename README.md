@@ -1,5 +1,7 @@
-Yee-Light-Blue
+Yee-Light-Blue and Yee-Light-Blue-2 (Beta)
 ==============
+
+Yee Light Blue 2 is located inside the yeelightblue2 branch. Please checkout to yeelightblue2 or change inside the drop down list above to `yeelightblue2`. Be warn the code is still in beta development and still requires testing.
 
 Writing library for yee light blue using python for raspberry pi
 
