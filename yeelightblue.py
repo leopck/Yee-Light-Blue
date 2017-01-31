@@ -23,8 +23,8 @@ class YeeLightBlue:
         #pass
     
     def disconnect(self):
-        self.con.sendline('disconnect')
-        self.con.expect('\[LE\]>', timeout=600)
+        #self.con.sendline('disconnect') ## Removed to try just exiting without disconnecting
+        #self.con.expect('\[LE\]>', timeout=600) ## Removed to try just exiting without disconnecting
         self.con.sendline('exit')
         #pass
     
