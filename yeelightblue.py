@@ -15,7 +15,6 @@ class YeeLightBlue:
     def connect(self, mac_str, device_no):
 	call(['sudo', 'hciconfig', device_no, 'down'])
 	call(['sudo', 'hciconfig', device_no, 'up'])
-        call(['sudo', 'hcitool', '-i', device_no, 'lecc', mac_str])
         time.sleep(1)
         self.con = pexpect.spawn('sudo gatttool -i ' + device_no + ' -b ' + mac_str + ' -I')
         self.con.expect('\[LE\]>', timeout=600)
@@ -24,16 +23,16 @@ class YeeLightBlue:
         #pass
     
     def disconnect(self):
-        self.con.sendline('disconnect')
-        self.con.expect('\[LE\]>', timeout=600)
+        #self.con.sendline('disconnect') ## Removed to try just exiting without disconnecting
+        #self.con.expect('\[LE\]>', timeout=600) ## Removed to try just exiting without disconnecting
         self.con.sendline('exit')
         #pass
     
     def turnOff(self):
-        self.con.sendline('char-write-cmd 0x0025 2c2c2c302c2c2c2c2c2c2c2c2c2c2c2c2c2c')      
+        self.con.sendline('char-write-cmd 0x0012 2c2c2c302c2c2c2c2c2c2c2c2c2c2c2c2c2c')      
 
     def turnOn(self):
-        self.con.sendline('char-write-cmd 0x0025 2c2c2c3130302c2c2c2c2c2c2c2c2c2c2c2c')
+        self.con.sendline('char-write-cmd 0x0012 2c2c2c3130302c2c2c2c2c2c2c2c2c2c2c2c')
         #pass
         
     def str2hex(self, a_str):
@@ -50,7 +49,7 @@ class YeeLightBlue:
             #print a_str
         self.str2hex(a_str)
         print self.hexStr
-        self.con.sendline('char-write-cmd 0x0025 ' + self.hexStr)
+        self.con.sendline('char-write-cmd 0x0012 ' + self.hexStr)
     
     def delayON(self, time, status):
         '''TODO: Function is missing UUID/Handle'''
@@ -66,7 +65,7 @@ class YeeLightBlue:
                 #print a_str
             self.str2hex(a_str)
             print self.hexStr
-            self.con.sendline('char-write-cmd 0x0025 ' + self.hexStr)
+            self.con.sendline('char-write-cmd 0x0012 ' + self.hexStr)
 
     def delayOnStatusQuery(self):
         '''TODO: Function is missing UUID/Handle'''
