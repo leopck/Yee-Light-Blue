@@ -71,3 +71,14 @@ class YeeLightBlue:
     def delayOnStatusQuery(self):
         '''TODO: Function is missing UUID/Handle'''
         self.con.sendline('char-write-cmd 0x00__ RT')
+
+    def white(self,temperature,brightness):
+        a_str = "CLTMP " + temperature + ',' + brightness + ','
+        for letter in range(len(a_str),18):
+            #print letter
+            a_str += ','
+            #print a_str
+        self.str2hex(a_str)
+	print a_str
+        print self.hexStr
+        self.con.sendline('char-write-cmd 0x0012 ' + self.hexStr)
