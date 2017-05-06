@@ -1,11 +1,14 @@
-Yee-Light-Blue-2
+
+Yee-Light-Blue and Yee-Light-Blue-2 (Beta)
 ==============
+
+*Yee Light Blue 2 is located inside the yeelightblue2 branch. Please checkout to yeelightblue2 or change inside the drop down list above to `yeelightblue2`. Be warn the code is still in beta development and still requires testing.*
 
 This code is written to run yee light blue 2 as yee light blue is no longer on sales anymore. Yee Light Blue 2 codes is still in development and is still in beta phase. Please test and file issues to contribute into this code.
 
 Writing library for yee light blue 2 using python for raspberry pi
 
-- Enabling Raspberry Pi to control Yee Light Blue freely.
+- Enabling Raspberry Pi to control Yee Light Blue 2 freely.
 
 Running test.py requires root
 
